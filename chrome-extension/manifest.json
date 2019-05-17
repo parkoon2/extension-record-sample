@@ -1,0 +1,31 @@
+{
+    "name": "chrome recorder",
+    "description": "chrome recorder",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": "images/icon/record_off.png"
+    },
+    "icons": {
+        "128": "images/icon/icon.png"
+    },
+    "background": {
+        "scripts": ["background/index.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["content_scripts/index.js"]
+        }
+    ],
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "tabCapture",
+        "activeTab",
+        "tabs",
+        "storage",
+        "desktopCapture"
+    ],
+    "web_accessible_resources": ["images/icon/icon.png", "images/icon/*.png"]
+}
