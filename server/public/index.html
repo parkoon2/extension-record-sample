@@ -16,9 +16,15 @@
             startRecordButton.addEventListener('click', handleStartRecord)
             stopRecordButton.addEventListener('click', handleStopRecord)
 
-            function handleStartRecord() {}
+            function handleStartRecord() {
+                window.postMessage(
+                    {
+                        command: 'START_RECORD'
+                    },
+                    location.origin
+                )
+            }
             function handleStopRecord() {}
         </script>
     </body>
 </html>
-f
